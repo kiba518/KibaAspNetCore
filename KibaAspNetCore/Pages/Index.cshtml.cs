@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace KibaAspNetCore.Pages
-{
+{ 
+    //http://localhost:19492/index?title=kiba
     public class IndexModel : PageModel
     {
-        //http://localhost:19492/index?title=kiba
+        public string title; 
         public void OnGet()
         { 
-            string title = this.Request.Query["title"];
+            title = this.Request.Query["title"];
             if (!string.IsNullOrWhiteSpace(title))
             {
                 ViewData["Title"] = title;
